@@ -16,7 +16,6 @@
         .skill-bar-fill { height: 6px; border-radius: 3px; transition: width 1s ease-in-out; }
         .timeline-line { width: 2px; height: 100%; background: #cbd5e1; position: absolute; left: 8px; top: 0; }
         .timeline-dot { width: 18px; height: 18px; background: #0f172a; border-radius: 50%; border: 4px solid #fff; position: absolute; left: 0px; top: 4px; z-index: 10; }
-        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
     </style>
 </head>
 <body class="p-4 md:p-6 lg:p-10">
@@ -28,216 +27,170 @@
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">SHANKAR PRASAD TN</h1>
                 <p class="text-teal-400 text-xl font-semibold tracking-wide uppercase">Multi-Cloud DevOps Engineer</p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-5 mt-6 text-slate-300 text-sm">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-teal-500"></i> Bangalore / Chennai, India</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-teal-500"></i> Bangalore / Chennai</span>
                     <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-teal-500"></i> +91-7411146096</span>
                     <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-teal-500"></i> shankarprasadtn@gmail.com</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-teal-500"></i> <a href="https://www.shankarprasadtn.xyz" target="_blank" class="hover:text-teal-400 transition-colors">www.shankarprasadtn.xyz</a></span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-teal-500"></i> <a href="https://www.shankarprasadtn.xyz" target="_blank" class="hover:text-teal-400 transition-colors">shankarprasadtn.xyz</a></span>
                 </div>
-            </div>
-            <div class="flex gap-4">
-                <a href="https://linkedin.com/in/shankar-prasad-34853288" target="_blank" class="w-12 h-12 flex items-center justify-center bg-slate-800 rounded-2xl hover:bg-teal-500 hover:-translate-y-1 transition-all duration-300 shadow-lg"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
-                <a href="https://github.com/shankarprasadtn" target="_blank" class="w-12 h-12 flex items-center justify-center bg-slate-800 rounded-2xl hover:bg-teal-500 hover:-translate-y-1 transition-all duration-300 shadow-lg"><i class="fa-brands fa-github text-xl"></i></a>
+                <div class="flex flex-wrap justify-center md:justify-start gap-5 mt-3 text-slate-400 text-xs">
+                    <span class="flex items-center gap-2"><i class="fa-brands fa-linkedin text-teal-500"></i> linkedin.com/in/shankar-prasad-34853288</span>
+                    <span class="flex items-center gap-2"><i class="fa-brands fa-github text-teal-500"></i> github.com/shankarprasadtn</span>
+                </div>
             </div>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-12">
-            
             <!-- Sidebar (Left Column) -->
-            <aside class="lg:col-span-4 bg-slate-50 p-8 border-r border-slate-100 flex flex-col gap-10">
-                
-                <!-- Transition Narrative -->
+            <aside class="lg:col-span-4 bg-slate-50 p-8 border-r border-slate-100 flex flex-col gap-8">
                 <div>
                     <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">The Pivot</h2>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Transitioning from <span class="font-bold text-slate-800 underline decoration-teal-500">8+ years</span> of core IT infrastructure administration into 
-                        <span class="font-bold text-teal-600">Multi-Cloud DevOps</span>. Expert in bridging legacy system reliability with modern cloud-native automation.
+                        Transitioning from <span class="font-bold text-slate-800 underline decoration-teal-500">8+ years</span> of IT infrastructure into 
+                        <span class="font-bold text-teal-600">Multi-Cloud DevOps</span>. Expert in bridging legacy systems with cloud-native automation.
                     </p>
                 </div>
 
-                <!-- Skill Clusters -->
                 <div>
                     <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Technical Arsenal</h2>
-                    
-                    <div class="space-y-5">
-                        <!-- Cloud -->
+                    <div class="space-y-4">
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-2">AWS / Azure / Serverless <span>90%</span></p>
-                            <div class="skill-bar-bg w-full">
-                                <div class="skill-bar-fill bg-teal-500 w-[90%]"></div>
-                            </div>
+                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">AWS / Azure / Serverless <span>90%</span></p>
+                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-teal-500 w-[90%]"></div></div>
                         </div>
-                        
-                        <!-- DevOps -->
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-2">K8s / Docker / CI-CD <span>85%</span></p>
-                            <div class="skill-bar-bg w-full">
-                                <div class="skill-bar-fill bg-indigo-500 w-[85%]"></div>
-                            </div>
+                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">K8s / Docker / CI-CD <span>85%</span></p>
+                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-indigo-500 w-[85%]"></div></div>
                         </div>
-
-                        <!-- Automation -->
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-2">Python / Boto3 / Shell <span>80%</span></p>
-                            <div class="skill-bar-bg w-full">
-                                <div class="skill-bar-fill bg-blue-500 w-[80%]"></div>
-                            </div>
+                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">Python / Boto3 / Shell <span>80%</span></p>
+                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-blue-500 w-[80%]"></div></div>
                         </div>
-                        
-                        <!-- Systems -->
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-2">Enterprise Admin <span>95%</span></p>
-                            <div class="skill-bar-bg w-full">
-                                <div class="skill-bar-fill bg-slate-800 w-[95%]"></div>
-                            </div>
+                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">Enterprise Admin <span>95%</span></p>
+                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-slate-800 w-[95%]"></div></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Detailed Toolset (New Sections from Resume) -->
-                <div class="grid grid-cols-1 gap-6">
-                    <div>
-                        <h3 class="text-[11px] font-black text-teal-600 uppercase mb-3 tracking-wider">Enterprise Admin</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Active Directory</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Exchange 2019</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Group Policy</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">WSUS</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">MDT</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Office 365</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-[11px] font-black text-indigo-600 uppercase mb-3 tracking-wider">ITSM & Backup Tools</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">JIRA</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Lansweeper</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Snipe-IT</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">CommVault</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Veritas</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-[11px] font-black text-blue-600 uppercase mb-3 tracking-wider">Networking & Security</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">VPN</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Firewalls</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">Cisco Meraki</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">SSO</span>
-                            <span class="px-2 py-1 bg-white border border-slate-200 text-slate-600 text-[10px] font-bold rounded">DHCP</span>
-                        </div>
+                <div>
+                    <h3 class="text-[11px] font-black text-teal-600 uppercase mb-3 tracking-wider">Enterprise Stack</h3>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-bold text-slate-600">
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Active Directory</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Exchange 2019</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">WSUS/MDT</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">JIRA</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Lansweeper</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Snipe-IT</span>
                     </div>
                 </div>
 
-                <!-- Education -->
                 <div>
                     <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Academic</h2>
                     <div class="space-y-4">
                         <div class="border-l-2 border-teal-500 pl-3">
                             <p class="text-xs font-bold text-teal-600">2026 (Exp)</p>
                             <p class="text-sm font-bold text-slate-800">PG - Multi-Cloud & DevOps</p>
-                            <p class="text-[10px] text-slate-500 uppercase tracking-tight">Hero Vired</p>
+                            <p class="text-[10px] text-slate-500 uppercase">Hero Vired</p>
                         </div>
                         <div class="border-l-2 border-slate-300 pl-3">
                             <p class="text-xs font-bold text-slate-500">2016</p>
                             <p class="text-sm font-bold text-slate-800">BE in Computer Science</p>
-                            <p class="text-[10px] text-slate-500 uppercase tracking-tight">CMRIT, VTU</p>
+                            <p class="text-[10px] text-slate-500 uppercase">CMRIT, VTU</p>
                         </div>
                     </div>
+                </div>
+                
+                <div class="p-4 bg-slate-900 rounded-2xl text-center shadow-inner">
+                    <p class="text-teal-400 text-[10px] font-black uppercase tracking-widest mb-2">Certifications</p>
+                    <p class="text-white text-[10px] leading-relaxed">AZ-104 • CCNA • MCITP • CompTIA A+</p>
                 </div>
             </aside>
 
             <!-- Main Content (Right Column) -->
-            <main class="lg:col-span-8 p-8 md:p-12 space-y-12">
-                
-                <!-- Professional Experience -->
+            <main class="lg:col-span-8 p-8 md:p-10 space-y-10">
                 <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-                        <span class="w-10 h-10 bg-teal-500 text-white rounded-xl flex items-center justify-center"><i class="fa-solid fa-timeline"></i></span> Career Progression
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <span class="w-10 h-10 bg-teal-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-teal-100"><i class="fa-solid fa-timeline"></i></span> Career Progression
                     </h2>
-                    
-                    <div class="space-y-12">
-                        <!-- Role 1 -->
+                    <div class="space-y-8">
                         <div class="relative pl-12">
-                            <div class="timeline-line"></div>
-                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div><div class="timeline-dot"></div>
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-slate-800">Management Specialist</h3>
-                                <span class="text-[10px] font-black px-3 py-1 bg-teal-500 text-white rounded-full">JUL 2022 - PRESENT</span>
+                                <h3 class="text-lg font-bold text-slate-800">Management Specialist</h3>
+                                <span class="text-[9px] font-black px-2 py-0.5 bg-teal-500 text-white rounded-md uppercase">Jul 2022 - Present</span>
                             </div>
-                            <p class="text-teal-600 font-semibold text-sm mb-4">UPS Logistics Pvt Ltd - ITC | Bangalore, Chennai</p>
-                            <ul class="text-slate-600 text-sm space-y-2 list-disc list-outside ml-4">
-                                <li>Orchestrating <span class="text-slate-900 font-medium">JIRA incident/change workflows</span> for high-stakes logistics operations.</li>
-                                <li>Automating patch management and security compliance across <span class="text-slate-900 font-medium">Windows Server 2026</span> and Linux fleets.</li>
-                                <li>Provisioning infrastructure using <span class="text-slate-900 font-medium">MDT & Cosmic Systems</span> for seamless onboarding.</li>
+                            <p class="text-teal-600 font-semibold text-xs mb-3">UPS Logistics Pvt Ltd - ITC | Bangalore, Chennai</p>
+                            <ul class="text-slate-600 text-xs space-y-1.5 list-disc list-outside ml-4">
+                                <li>Orchestrating <span class="font-medium text-slate-900">JIRA incident/change workflows</span> for tech-center operations.</li>
+                                <li>Deploying images via <span class="font-medium text-slate-900">Cosmic Systems & MDT</span>; automating enterprise security patch cycles.</li>
+                                <li>Led IT infrastructure setup for the India Technology Center (ITC) in Chennai.</li>
                             </ul>
                         </div>
-
-                        <!-- Role 2 -->
                         <div class="relative pl-12">
-                            <div class="timeline-line"></div>
-                            <div class="timeline-dot !bg-slate-400"></div>
+                            <div class="timeline-line"></div><div class="timeline-dot !bg-slate-300"></div>
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                 <h3 class="text-lg font-bold text-slate-800">IT System Administrator</h3>
-                                <span class="text-[10px] font-black px-3 py-1 bg-slate-200 text-slate-600 rounded-full">2020 - 2022</span>
+                                <span class="text-[9px] font-black px-2 py-0.5 bg-slate-200 text-slate-600 rounded-md uppercase">2020 - 2022</span>
                             </div>
-                            <p class="text-slate-500 font-semibold text-sm mb-3">V2Soft Pvt Ltd (STTAS-A UPS Company)</p>
-                            <p class="text-slate-600 text-sm italic">Focus: Containerization Support & Cloud Security</p>
-                        </div>
-
-                        <!-- Role 3 -->
-                        <div class="relative pl-12">
-                            <div class="timeline-line"></div>
-                            <div class="timeline-dot !bg-slate-300"></div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-slate-800">Systems Engineer</h3>
-                                <span class="text-[10px] font-black px-3 py-1 bg-slate-200 text-slate-500 rounded-full">2019 - 2020</span>
-                            </div>
-                            <p class="text-slate-500 font-semibold text-sm mb-3 text-indigo-400">Digicom Systems Ltd</p>
-                            <p class="text-slate-600 text-sm">Successfully executed complex server migrations to cloud environments and managed <span class="text-slate-900 font-medium">Cisco HyperFlex</span> infrastructure.</p>
+                            <p class="text-slate-500 font-semibold text-xs mb-2">V2Soft Pvt Ltd (STTAS-A UPS Company)</p>
+                            <p class="text-slate-600 text-xs italic">Managed Docker-on-WSL2 environments & enterprise asset tracking.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Project Cards -->
                 <section>
                     <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <span class="w-10 h-10 bg-indigo-500 text-white rounded-xl flex items-center justify-center"><i class="fa-solid fa-code-merge"></i></span> Key DevOps Projects
+                        <span class="w-10 h-10 bg-indigo-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-indigo-100"><i class="fa-solid fa-code-merge"></i></span> Project Repositories
                     </h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <!-- Project 1 -->
-                        <div class="p-6 bg-slate-50 border border-slate-100 rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group">
-                            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-cloud"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-lg mb-1">Gratitude App</h4>
-                            <p class="text-[10px] font-black text-indigo-500 uppercase tracking-widest mb-4 italic">Multi-Cloud CI/CD Pipeline</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Engineered a collaborative application deployment across <span class="font-bold">AWS and Azure</span> using full automation.
-                            </p>
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i class="fa-solid fa-rocket"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">Gratitude App</h4>
+                            <p class="text-[9px] font-black text-indigo-500 uppercase tracking-widest mb-3">Multi-Cloud CI/CD</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">Collaborative application deployed across <span class="font-bold">AWS & Azure</span> with automated deployment pipelines.</p>
                         </div>
-
                         <!-- Project 2 -->
-                        <div class="p-6 bg-slate-50 border border-slate-100 rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group">
-                            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-lg mb-1">Cloud Sec-Auditor</h4>
-                            <p class="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-4 italic">Python (Boto3) & AWS Lambda</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Automated identification of unencrypted <span class="font-bold">S3 Buckets</span> using serverless security monitors.
-                            </p>
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-teal-500 group-hover:text-white transition-colors"><i class="fa-solid fa-qrcode"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">Asset QR Management</h4>
+                            <p class="text-[9px] font-black text-teal-600 uppercase tracking-widest mb-3">Inventory Automation</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">QR-based asset tracking system to streamline inventory management and hardware visibility.</p>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-blue-500 group-hover:text-white transition-colors"><i class="fa-solid fa-plane"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">My Travel Memory</h4>
+                            <p class="text-[9px] font-black text-blue-600 uppercase tracking-widest mb-3">Web Development</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">Designed a travel logging application to capture and organize media and trip experiences.</p>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-500 group-hover:text-white transition-colors"><i class="fa-solid fa-cubes"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">Microservices Dev</h4>
+                            <p class="text-[9px] font-black text-purple-600 uppercase tracking-widest mb-3">Docker & Containerization</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">Decoupled legacy architecture into services using <span class="font-bold">Docker</span> and modern orchestration tools.</p>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">Cloud Sec-Auditor</h4>
+                            <p class="text-[9px] font-black text-red-500 uppercase tracking-widest mb-3">Boto3 Automation</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">Identification of unencrypted <span class="font-bold">S3 Buckets</span> using serverless monitors and Python logic.</p>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group relative overflow-hidden">
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i class="fa-solid fa-brain"></i></div>
+                            <h4 class="font-bold text-slate-800 text-md mb-1">Sentiment Analysis</h4>
+                            <p class="text-[9px] font-black text-amber-500 uppercase tracking-widest mb-3">AWS Lambda</p>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">Built serverless functions to process and analyze text data using <span class="font-bold">AWS services</span> for AI-driven insights.</p>
                         </div>
                     </div>
                 </section>
             </main>
         </div>
-        
-        <!-- Bottom Bar -->
         <footer class="bg-slate-900 p-4 text-center">
-            <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em]">Multi-Cloud • DevOps • Automation • Infrastructure</p>
+            <p class="text-slate-500 text-[9px] font-bold uppercase tracking-[0.4em]">Multi-Cloud • DevOps • Automation • Cloud Native</p>
         </footer>
     </div>
 </body>
