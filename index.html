@@ -8,262 +8,404 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #14b8a6;
+            --primary-dark: #0d9488;
+            --secondary: #6366f1;
+            --dark: #0f172a;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
+            background: radial-gradient(circle at top right, #f1f5f9, #e2e8f0);
+            min-height: 100vh;
         }
-        .skill-bar-bg { background-color: #e2e8f0; height: 6px; border-radius: 3px; }
-        .skill-bar-fill { height: 6px; border-radius: 3px; transition: width 1s ease-in-out; }
-        .timeline-line { width: 2px; height: 100%; background: #cbd5e1; position: absolute; left: 8px; top: 0; }
-        .timeline-dot { width: 18px; height: 18px; background: #0f172a; border-radius: 50%; border: 4px solid #fff; position: absolute; left: 0px; top: 4px; z-index: 10; }
-        .achievement-pill { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+
+        .skill-bar-bg { background-color: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .skill-bar-fill { 
+            height: 100%; 
+            border-radius: 4px; 
+            width: 0; /* Start at 0 for animation */
+            transition: width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1); 
+        }
+        
+        .timeline-line { width: 2px; height: 100%; background: linear-gradient(to bottom, var(--dark), #cbd5e1); position: absolute; left: 8px; top: 0; }
+        .timeline-dot { 
+            width: 18px; height: 18px; background: var(--dark); border-radius: 50%; 
+            border: 4px solid #fff; position: absolute; left: 0px; top: 4px; z-index: 10;
+            box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        /* Success message for copy email */
+        #copy-toast {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        #copy-toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-badge { animation: pulse-soft 2s infinite; }
     </style>
 </head>
-<body class="p-4 md:p-6 lg:p-10">
-    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-200">
+<body class="p-4 md:p-8 lg:p-12">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-[2.5rem] overflow-hidden border border-slate-200">
         
         <!-- Header Section -->
-        <header class="bg-slate-900 text-white p-8 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">SHANKAR PRASAD TN</h1>
-                <p class="text-teal-400 text-xl font-semibold tracking-wide uppercase">Multi-Cloud DevOps Engineer</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-5 mt-6 text-slate-300 text-sm">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-teal-500"></i> Bangalore / Chennai</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-teal-500"></i> +91-7411146096</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-teal-500"></i> shankarprasadtn@gmail.com</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-teal-500"></i> <a href="https://www.shankarprasadtn.xyz" target="_blank" class="hover:text-teal-400 transition-colors">shankarprasadtn.xyz</a></span>
+        <header class="bg-slate-900 text-white p-8 md:p-12 relative overflow-hidden">
+            <!-- Decorative Background Element -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-400 text-[10px] font-bold uppercase tracking-widest mb-4 pulse-badge">
+                        <span class="w-2 h-2 bg-teal-400 rounded-full"></span> Available for Opportunities
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-3">SHANKAR PRASAD TN</h1>
+                    <p class="text-teal-400 text-xl md:text-2xl font-light tracking-wide">Multi-Cloud <span class="font-bold">DevOps Engineer</span></p>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-slate-300 text-sm">
+                        <span class="flex items-center gap-2 hover:text-teal-400 transition-colors"><i class="fa-solid fa-location-dot text-teal-500"></i> Bangalore / Chennai</span>
+                        <span class="flex items-center gap-2 hover:text-teal-400 transition-colors"><i class="fa-solid fa-phone text-teal-500"></i> +91-7411146096</span>
+                        <button onclick="copyEmail()" class="flex items-center gap-2 hover:text-teal-400 transition-all group">
+                            <i class="fa-solid fa-envelope text-teal-500 group-hover:scale-110 transition-transform"></i> 
+                            <span id="email-text">shankarprasadtn@gmail.com</span>
+                        </button>
+                        <span class="flex items-center gap-2 hover:text-teal-400 transition-colors">
+                            <i class="fa-solid fa-globe text-teal-500"></i> 
+                            <a href="https://www.shankarprasadtn.xyz" target="_blank" class="font-bold underline decoration-teal-500/30 hover:decoration-teal-500">shankarprasadtn.xyz</a>
+                        </span>
+                    </div>
                 </div>
-                <div class="flex flex-wrap justify-center md:justify-start gap-5 mt-3 text-slate-400 text-xs">
-                    <span class="flex items-center gap-2"><i class="fa-brands fa-linkedin text-teal-500"></i> linkedin.com/in/shankar-prasad-34853288</span>
-                    <span class="flex items-center gap-2"><i class="fa-brands fa-github text-teal-500"></i> github.com/shankarprasadtn</span>
+
+                <div class="flex flex-row md:flex-col gap-4">
+                    <a href="https://linkedin.com/in/shankar-prasad-34853288" target="_blank" class="w-14 h-14 flex items-center justify-center bg-white/5 hover:bg-teal-500 rounded-2xl transition-all duration-300 group">
+                        <i class="fa-brands fa-linkedin-in text-2xl group-hover:scale-110"></i>
+                    </a>
+                    <a href="https://github.com/shankarprasadtn" target="_blank" class="w-14 h-14 flex items-center justify-center bg-white/5 hover:bg-indigo-500 rounded-2xl transition-all duration-300 group">
+                        <i class="fa-brands fa-github text-2xl group-hover:scale-110"></i>
+                    </a>
                 </div>
             </div>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-12">
             <!-- Sidebar -->
-            <aside class="lg:col-span-4 bg-slate-50 p-8 border-r border-slate-100 flex flex-col gap-8">
+            <aside class="lg:col-span-4 bg-slate-50 p-8 md:p-10 border-r border-slate-100 flex flex-col gap-10">
+                
+                <!-- About -->
                 <div>
-                    <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Core Focus</h2>
-                    <p class="text-slate-600 text-sm leading-relaxed italic">
-                        "Bridging 8+ years of enterprise infrastructure reliability with modern Multi-Cloud DevOps agility."
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">The Mission</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Transitioning <span class="font-bold text-slate-900">8+ years</span> of enterprise IT infrastructure expertise into 
+                        the <span class="text-teal-600 font-bold">Cloud-Native era</span>. Specialist in bridging legacy reliability with modern DevOps automation and secure CI/CD orchestration.
                     </p>
                 </div>
 
+                <!-- Skill Charts -->
                 <div>
-                    <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Technical Arsenal</h2>
-                    <div class="space-y-4">
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Expertise Proficiencies</h2>
+                    <div class="space-y-6">
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">AWS / Azure / Serverless <span>90%</span></p>
-                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-teal-500 w-[90%]"></div></div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+                                <span>AWS / AZURE CLOUD</span>
+                                <span class="text-teal-600">90%</span>
+                            </div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill bg-teal-500" data-width="90%"></div></div>
                         </div>
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">K8s / Docker / CI-CD <span>85%</span></p>
-                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-indigo-500 w-[85%]"></div></div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+                                <span>K8s / DOCKER / CI-CD</span>
+                                <span class="text-indigo-600">85%</span>
+                            </div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill bg-indigo-500" data-width="85%"></div></div>
                         </div>
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">Python / Boto3 / Shell <span>80%</span></p>
-                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-blue-500 w-[80%]"></div></div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+                                <span>PYTHON / BOTO3 / IAC</span>
+                                <span class="text-blue-600">80%</span>
+                            </div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill bg-blue-500" data-width="80%"></div></div>
                         </div>
                         <div>
-                            <p class="flex justify-between text-[11px] font-bold text-slate-700 uppercase mb-1">Enterprise Admin <span>95%</span></p>
-                            <div class="skill-bar-bg w-full"><div class="skill-bar-fill bg-slate-800 w-[95%]"></div></div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+                                <span>ENTERPRISE SYSADMIN</span>
+                                <span class="text-slate-800">95%</span>
+                            </div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill bg-slate-800" data-width="95%"></div></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Methods -->
                 <div>
-                    <h3 class="text-[11px] font-black text-teal-600 uppercase mb-3 tracking-wider">Enterprise Stack</h3>
-                    <div class="flex flex-wrap gap-2 text-[10px] font-bold text-slate-600">
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Active Directory</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Exchange 2019</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">WSUS / MDT</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">JIRA / SMC</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Lansweeper</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Snipe-IT / EARS</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">CommVault</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded shadow-sm">Cisco HyperFlex</span>
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Methodologies</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[10px] font-bold text-slate-600 shadow-sm uppercase tracking-tighter italic hover:border-teal-500 transition-colors cursor-default">Agile / Scrum</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[10px] font-bold text-slate-600 shadow-sm uppercase tracking-tighter italic hover:border-teal-500 transition-colors cursor-default">ITIL Framework</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[10px] font-bold text-slate-600 shadow-sm uppercase tracking-tighter italic hover:border-teal-500 transition-colors cursor-default">GitOps Workflow</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[10px] font-bold text-slate-600 shadow-sm uppercase tracking-tighter italic hover:border-teal-500 transition-colors cursor-default">Site Reliability</span>
                     </div>
                 </div>
 
+                <!-- Enterprise Tooling -->
                 <div>
-                    <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Academic</h2>
-                    <div class="space-y-4">
-                        <div class="border-l-2 border-teal-500 pl-3">
-                            <p class="text-xs font-bold text-teal-600">2026 (Exp)</p>
-                            <p class="text-sm font-bold text-slate-800">PG - Multi-Cloud & DevOps</p>
-                            <p class="text-[10px] text-slate-500 uppercase">Hero Vired</p>
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Tech Stack</h2>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">ACTIVE DIRECTORY</div>
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">EXCHANGE 2019</div>
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">WSUS / MDT</div>
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">SNIPE-IT / EARS</div>
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">COMMVAULT</div>
+                        <div class="p-3 bg-white border border-slate-100 rounded-xl text-[10px] font-bold text-slate-500 text-center shadow-sm">CISCO MERAKI</div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Learning Path</h2>
+                    <div class="space-y-6">
+                        <div class="group">
+                            <p class="text-[10px] font-black text-teal-600 mb-1">2026 EXPECTED</p>
+                            <p class="text-sm font-bold text-slate-800 group-hover:text-teal-600 transition-colors">PG - Multi-Cloud & DevOps</p>
+                            <p class="text-xs text-slate-500 italic">Hero Vired Academy</p>
                         </div>
-                        <div class="border-l-2 border-slate-300 pl-3">
-                            <p class="text-xs font-bold text-slate-500">2016</p>
-                            <p class="text-sm font-bold text-slate-800">BE in Computer Science</p>
-                            <p class="text-[10px] text-slate-500 uppercase">CMRIT, VTU</p>
+                        <div class="group">
+                            <p class="text-[10px] font-black text-slate-400 mb-1">2016 GRADUATE</p>
+                            <p class="text-sm font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">BE in Computer Science</p>
+                            <p class="text-xs text-slate-500 italic">CMRIT, VTU University</p>
+                        </div>
+                        <div class="group">
+                            <p class="text-[10px] font-black text-slate-400 mb-1">2012 GRADUATE</p>
+                            <p class="text-sm font-bold text-slate-800 group-hover:text-slate-600 transition-colors">Diploma in Computer Science</p>
+                            <p class="text-xs text-slate-500 italic">Bharath Polytechnic</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="p-4 bg-slate-900 rounded-2xl text-center shadow-inner mt-auto">
-                    <p class="text-teal-400 text-[10px] font-black uppercase tracking-widest mb-2">Top Certifications</p>
-                    <p class="text-white text-[10px] leading-relaxed">AZ-104 • CCNA • MCITP • CompTIA A+</p>
+                <!-- Bottom Badge -->
+                <div class="mt-auto p-5 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl text-center shadow-xl">
+                    <p class="text-teal-400 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Certified In</p>
+                    <div class="flex flex-wrap justify-center gap-2 text-[9px] font-bold text-white/80">
+                        <span class="bg-white/10 px-2 py-1 rounded">AZ-104</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">CCNA</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">MCITP</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">CompTIA A+</span>
+                    </div>
                 </div>
             </aside>
 
             <!-- Main Content -->
-            <main class="lg:col-span-8 p-8 md:p-10 space-y-12">
+            <main class="lg:col-span-8 p-8 md:p-12 space-y-16">
+                
+                <!-- Experience Section -->
                 <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3 underline underline-offset-8 decoration-teal-500">
-                        Professional Experience
-                    </h2>
+                    <div class="flex items-center gap-4 mb-12">
+                        <div class="w-12 h-12 bg-teal-500 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-teal-200">
+                            <i class="fa-solid fa-briefcase text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Professional Journey</h2>
+                    </div>
                     
                     <div class="space-y-12">
-                        <!-- UPS -->
-                        <div class="relative pl-12">
-                            <div class="timeline-line"></div><div class="timeline-dot"></div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-building-user text-teal-600 text-sm"></i> Management Specialist
-                                </h3>
-                                <span class="text-[9px] font-black px-2 py-0.5 bg-teal-500 text-white rounded-md uppercase">Jul 2022 - Present</span>
+                        <!-- Role 1: UPS -->
+                        <div class="relative pl-12 group">
+                            <div class="timeline-line"></div>
+                            <div class="timeline-dot group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
+                                <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors italic">Management Specialist</h3>
+                                <span class="inline-block text-[10px] font-black px-3 py-1 bg-teal-500 text-white rounded-full uppercase tracking-wider">Jul 2022 - Present</span>
                             </div>
-                            <p class="text-teal-600 font-semibold text-sm mb-4">UPS Logistics Pvt Ltd - ITC | Bangalore, Chennai</p>
-                            <ul class="text-slate-600 text-xs space-y-2 list-disc list-outside ml-4">
-                                <li>Orchestrating IT incidents and change workflows using <span class="font-bold text-slate-900">JIRA and SMC</span> to maintain operational continuity.</li>
-                                <li>Provisioning OS images via <span class="font-bold text-slate-900">Cosmic Systems and MDT</span>; streamlining app distribution via GSDP and Group Policy.</li>
-                                <li>Executing full-lifecycle asset management and licensing via <span class="font-bold text-slate-900">Lansweeper, EARS, O365, and Exchange Admin Center</span>.</li>
-                                <li>Spearheading infrastructure operations including VPN management, hardware deployment, and enterprise access control.</li>
+                            <p class="text-slate-500 font-bold text-sm mb-4">UPS Logistics Pvt Ltd - ITC | <span class="text-teal-600">Bangalore, Chennai</span></p>
+                            
+                            <ul class="text-slate-600 text-sm space-y-3 mb-6">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i> <span>Orchestrating complex IT incident and change workflows via <span class="font-bold text-slate-900">JIRA/SMC</span> to ensure 99.9% operational uptime.</span></li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i> <span>Spearheading OS deployment strategies using <span class="font-bold text-slate-900">Cosmic Systems & MDT</span>; automating software delivery via GSDP.</span></li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i> <span>Governing enterprise assets and licensing lifecycles through <span class="font-bold text-slate-900">Lansweeper, EARS, and Exchange Admin</span>.</span></li>
                             </ul>
-                            <div class="mt-4 p-3 rounded-xl bg-teal-50 border border-teal-100 flex items-start gap-3">
-                                <i class="fa-solid fa-star text-teal-500 mt-1"></i>
-                                <p class="text-xs text-teal-800 font-medium leading-relaxed">
-                                    <span class="font-bold">Key Achievement:</span> Successfully implemented and supported the critical launch of the India Technology Center in Chennai.
-                                </p>
+                            
+                            <!-- Highlight Card -->
+                            <div class="p-4 rounded-2xl glass-card border-l-4 border-teal-500 shadow-sm flex items-start gap-4 hover-lift">
+                                <div class="w-10 h-10 bg-teal-500/10 text-teal-600 rounded-full flex-shrink-0 flex items-center justify-center">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] font-black text-teal-600 uppercase tracking-widest mb-1">Impact Highlight</p>
+                                    <p class="text-xs text-slate-700 leading-relaxed font-medium">Led the critical infrastructure rollout and support model for the launch of the <span class="font-bold">India Technology Center in Chennai</span>.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- V2Soft -->
-                        <div class="relative pl-12">
-                            <div class="timeline-line"></div><div class="timeline-dot !bg-slate-400"></div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-server text-slate-500 text-sm"></i> IT System Administrator
-                                </h3>
-                                <span class="text-[9px] font-black px-2 py-0.5 bg-slate-200 text-slate-600 rounded-md uppercase">2020 - 2022</span>
+                        <!-- Role 2: V2Soft -->
+                        <div class="relative pl-12 group">
+                            <div class="timeline-line"></div>
+                            <div class="timeline-dot !bg-slate-300 group-hover:!bg-indigo-500 transition-colors"></div>
+                            
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
+                                <h3 class="text-lg font-bold text-slate-800 italic group-hover:text-indigo-600 transition-colors">IT System Administrator</h3>
+                                <span class="inline-block text-[10px] font-black px-3 py-1 bg-slate-200 text-slate-600 rounded-full uppercase tracking-wider">2020 - 2022</span>
                             </div>
-                            <p class="text-slate-500 font-semibold text-xs mb-3">V2Soft Pvt Ltd (STTAS-A UPS Company) | Bangalore</p>
-                            <ul class="text-slate-600 text-xs space-y-2 list-disc list-outside ml-4">
-                                <li>Configured <span class="font-bold text-slate-900">WSL2 with Ubuntu and Docker</span> to provide high-efficiency support for dev environments.</li>
-                                <li>Automated patch management via <span class="font-bold text-slate-900">WSUS</span> in alignment with InfoSec compliance standards.</li>
-                                <li>Managed Microsoft 365 licensing and leveraged <span class="font-bold text-slate-900">Snipe-IT and Lansweeper</span> for granular asset tracking.</li>
+                            <p class="text-slate-500 font-bold text-sm mb-4 italic">V2Soft Pvt Ltd (STTAS-A UPS Company) | Bangalore</p>
+                            
+                            <ul class="text-slate-600 text-sm space-y-3">
+                                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-indigo-400 mt-1"></i> <span>Empowered development teams by configuring <span class="font-bold text-slate-900">WSL2 (Ubuntu/Docker)</span> local environments.</span></li>
+                                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-indigo-400 mt-1"></i> <span>Maintained fleet integrity via automated <span class="font-bold text-slate-900">WSUS</span> patching cycles in coordination with InfoSec.</span></li>
                             </ul>
                         </div>
 
-                        <!-- Digicom -->
-                        <div class="relative pl-12">
-                            <div class="timeline-line"></div><div class="timeline-dot !bg-slate-300"></div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-cloud-arrow-up text-slate-400 text-sm"></i> Systems Engineer
-                                </h3>
-                                <span class="text-[9px] font-black px-2 py-0.5 bg-slate-200 text-slate-500 rounded-md uppercase">2019 - 2020</span>
+                        <!-- Role 3: Digicom -->
+                        <div class="relative pl-12 group">
+                            <div class="timeline-line"></div>
+                            <div class="timeline-dot !bg-slate-200 group-hover:!bg-blue-500 transition-colors"></div>
+                            
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
+                                <h3 class="text-lg font-bold text-slate-800 italic group-hover:text-blue-600 transition-colors">Systems Engineer</h3>
+                                <span class="inline-block text-[10px] font-black px-3 py-1 bg-slate-200 text-slate-500 rounded-full uppercase tracking-wider">2019 - 2020</span>
                             </div>
-                            <p class="text-slate-500 font-semibold text-xs mb-3 text-indigo-400">Digicom Systems Ltd (AO Smith, Exotel Ltd)</p>
-                            <ul class="text-slate-600 text-xs space-y-2 list-disc list-outside ml-4">
-                                <li>Modernized infrastructure by executing server migrations to cloud and provisioning VMs via <span class="font-bold text-slate-900">Cisco HyperFlex</span>.</li>
-                                <li>Administered Microsoft Exchange Server 2019 and ensured data resilience via <span class="font-bold text-slate-900">CommVault/Veritas</span> backups.</li>
-                                <li>Optimized security by configuring firewalls, routers, and <span class="font-bold text-slate-900">Cisco Email Security</span>.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Wipro -->
-                        <div class="relative pl-12">
-                            <div class="timeline-line"></div><div class="timeline-dot !bg-slate-200"></div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-network-wired text-slate-300 text-sm"></i> Senior Associate Engineer
-                                </h3>
-                                <span class="text-[9px] font-black px-2 py-0.5 bg-slate-200 text-slate-400 rounded-md uppercase">2017 - 2019</span>
-                            </div>
-                            <p class="text-slate-500 font-semibold text-xs mb-3 italic">Wipro Ltd | Bangalore</p>
-                            <ul class="text-slate-600 text-xs space-y-2 list-disc list-outside ml-4">
-                                <li>Resolved critical VPN, DHCP, and enterprise network connectivity issues for a global workforce.</li>
-                                <li>Governed <span class="font-bold text-slate-900">Active Directory</span> operations: provisioning, deprovisioning, and complex group policy management.</li>
+                            <p class="text-slate-500 font-bold text-sm mb-4 italic">Digicom Systems Ltd (AO Smith, Exotel Ltd)</p>
+                            
+                            <ul class="text-slate-600 text-sm space-y-3">
+                                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-blue-400 mt-1"></i> <span>Architected server migrations to hybrid-cloud and provisioned VMs via <span class="font-bold text-slate-900">Cisco HyperFlex</span>.</span></li>
+                                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-blue-400 mt-1"></i> <span>Fortified data availability via <span class="font-bold text-slate-900">CommVault/Veritas</span> backup solutions and firewall tuning.</span></li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
+                <!-- Projects Section -->
                 <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <span class="w-10 h-10 bg-indigo-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-indigo-100"><i class="fa-solid fa-code-merge"></i></span> Project Portfolio
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                            <i class="fa-solid fa-code-merge text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Open Source Portfolio</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Project 1 -->
-                        <a href="https://github.com/shankarprasadtn/Capstone_GratitudeAPP" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i class="fa-solid fa-rocket"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">Gratitude App</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-indigo-500"></i>
+                        <a href="https://github.com/shankarprasadtn/Capstone_GratitudeAPP" target="_blank" class="p-6 bg-white border border-slate-100 rounded-[2rem] hover-lift group relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-indigo-50 rounded-full transition-transform group-hover:scale-150"></div>
+                            <div class="relative z-10">
+                                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-rocket text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-800 mb-2">Gratitude App</h4>
+                                <p class="text-[10px] font-black text-indigo-500 uppercase tracking-widest mb-3">Multi-Cloud CI/CD</p>
+                                <p class="text-xs text-slate-500 leading-relaxed italic">End-to-end automated deployment across AWS/Azure platforms.</p>
                             </div>
-                            <p class="text-[9px] font-black text-indigo-500 uppercase tracking-widest mb-3">Multi-Cloud CI/CD</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">Collaborative application deployed across AWS & Azure with automated pipelines.</p>
                         </a>
+
                         <!-- Project 2 -->
-                        <a href="https://github.com/shankarprasadtn/Asset-QR-CI-CD-Project" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-teal-500 group-hover:text-white transition-colors"><i class="fa-solid fa-qrcode"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">Asset QR Management</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-teal-500"></i>
+                        <a href="https://github.com/shankarprasadtn/Asset-QR-CI-CD-Project" target="_blank" class="p-6 bg-white border border-slate-100 rounded-[2rem] hover-lift group relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-teal-50 rounded-full transition-transform group-hover:scale-150"></div>
+                            <div class="relative z-10">
+                                <div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-qrcode text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-800 mb-2">Asset QR Management</h4>
+                                <p class="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-3">Inventory Ops</p>
+                                <p class="text-xs text-slate-500 leading-relaxed italic">Streamlined hardware lifecycle tracking via QR-automation.</p>
                             </div>
-                            <p class="text-[9px] font-black text-teal-600 uppercase tracking-widest mb-3">Inventory Automation</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">QR-based asset tracking system to streamline inventory lifecycle visibility.</p>
                         </a>
+
                         <!-- Project 3 -->
-                        <a href="https://github.com/shankarprasadtn/MyTravelMemory" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-blue-500 group-hover:text-white transition-colors"><i class="fa-solid fa-plane"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">My Travel Memory</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-blue-500"></i>
+                        <a href="https://github.com/shankarprasadtn/Monitor-Unencrypted-S3-Buckets-Using-AWS-Lambda-and-Boto3" target="_blank" class="p-6 bg-white border border-slate-100 rounded-[2rem] hover-lift group relative overflow-hidden">
+                            <div class="relative z-10">
+                                <div class="w-12 h-12 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-800 mb-2">Cloud Sec-Auditor</h4>
+                                <p class="text-[10px] font-black text-red-500 uppercase tracking-widest mb-3">Automation / Security</p>
+                                <p class="text-xs text-slate-500 leading-relaxed italic">Automated AWS S3 vulnerability detection via Python/Boto3.</p>
                             </div>
-                            <p class="text-[9px] font-black text-blue-600 uppercase tracking-widest mb-3">Web Development</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">Application designed to capture and organize media and trip experiences.</p>
                         </a>
+
                         <!-- Project 4 -->
-                        <a href="https://github.com/shankarprasadtn/Microservices-on-Containerization" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-500 group-hover:text-white transition-colors"><i class="fa-solid fa-cubes"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">Microservices Dev</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-purple-500"></i>
+                        <a href="https://github.com/shankarprasadtn/Sentiment-Analysis-Using-AWS-Lambda" target="_blank" class="p-6 bg-white border border-slate-100 rounded-[2rem] hover-lift group relative overflow-hidden">
+                            <div class="relative z-10">
+                                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-brain text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-800 mb-2">Sentiment Analysis</h4>
+                                <p class="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-3">AI / Serverless</p>
+                                <p class="text-xs text-slate-500 leading-relaxed italic">Real-time NLP processing using AWS Lambda triggers.</p>
                             </div>
-                            <p class="text-[9px] font-black text-purple-600 uppercase tracking-widest mb-3">Docker & Containerization</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">Decoupling legacy architecture into Docker services for modern orchestration.</p>
                         </a>
-                        <!-- Project 5 -->
-                        <a href="https://github.com/shankarprasadtn/Monitor-Unencrypted-S3-Buckets-Using-AWS-Lambda-and-Boto3" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-red-500 group-hover:text-white transition-colors"><i class="fa-solid fa-shield-halved"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">Cloud Sec-Auditor</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-red-500"></i>
-                            </div>
-                            <p class="text-[9px] font-black text-red-500 uppercase tracking-widest mb-3">Boto3 Automation</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">Automated identification of unencrypted S3 Buckets using serverless monitors.</p>
-                        </a>
-                        <!-- Project 6 -->
-                        <a href="https://github.com/shankarprasadtn/Sentiment-Analysis-Using-AWS-Lambda" target="_blank" class="p-5 bg-white border border-slate-100 rounded-2xl hover:shadow-xl transition-all group block">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i class="fa-solid fa-brain"></i></div>
-                            <div class="flex justify-between items-start">
-                                <h4 class="font-bold text-slate-800 text-md mb-1">Sentiment Analysis</h4>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-amber-500"></i>
-                            </div>
-                            <p class="text-[9px] font-black text-amber-500 uppercase tracking-widest mb-3">AWS Lambda</p>
-                            <p class="text-[11px] text-slate-600 leading-relaxed italic">Built serverless functions for AI-driven text analysis using AWS services.</p>
-                        </a>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <p class="text-slate-400 text-xs font-medium italic">Explore 20+ more repositories on my GitHub</p>
                     </div>
                 </section>
             </main>
         </div>
-        <footer class="bg-slate-900 p-4 text-center">
-            <p class="text-slate-500 text-[9px] font-bold uppercase tracking-[0.4em]">Multi-Cloud • DevOps • Automation • Infrastructure</p>
+        
+        <!-- Footer -->
+        <footer class="bg-slate-900 py-6 border-t border-slate-800 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs><pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="white" /></pattern></defs>
+                    <rect width="100%" height="100%" fill="url(#dots)" />
+                </svg>
+            </div>
+            <p class="text-slate-500 text-[10px] font-black uppercase tracking-[0.6em] relative z-10 italic">
+                Innovate • Automate • Orchestrate
+            </p>
         </footer>
     </div>
+
+    <!-- Toast message -->
+    <div id="copy-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 bg-teal-600 text-white rounded-full shadow-2xl text-xs font-bold z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i> Email Copied to Clipboard!
+    </div>
+
+    <script>
+        // Animate skill bars when they are in view
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.2 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const fill = entry.target;
+                        fill.style.width = fill.getAttribute('data-width');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.skill-bar-fill').forEach(fill => observer.observe(fill));
+        });
+
+        // Copy email function
+        function copyEmail() {
+            const email = document.getElementById('email-text').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('copy-toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
 </body>
 </html>
