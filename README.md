@@ -1,81 +1,147 @@
-Shankar Prasad TN | Multi-Cloud DevOps Engineer
+# Shankar Prasad TN | Multi-Cloud DevOps Engineer
 
-Welcome to my professional portfolio repository. This project hosts my interactive infographic resume, served via GitHub Pages to my custom domain: www.shankarprasadtn.xyz.
+Welcome to my professional portfolio repository. This project hosts my interactive infographic resume, served via GitHub Pages on my personal domain.
 
-🚀 About Me
+🌐 **Live Portfolio:** [shankarprasadtn.xyz](https://www.shankarprasadtn.xyz?utm_source=chatgpt.com)
 
-I am a dynamic IT Professional with over 8 years of experience in enterprise infrastructure and systems administration. I am currently specializing in Multi-Cloud DevOps, bridging the gap between legacy infrastructure reliability and modern cloud-native automation.
+---
 
-🌍 Based in Bangalore / Chennai, India.
+## 🚀 About Me
 
-🎓 PG in Multi-Cloud Architecture & DevOps (Hero Vired, 2026).
+Dynamic IT Professional with 8+ years of experience in enterprise infrastructure, systems administration, and cloud technologies. Currently focused on Multi-Cloud DevOps, combining infrastructure reliability with modern automation and cloud-native solutions.
 
-🛠️ Expert in automating cloud security and orchestrating containerized workloads.
+- 🌍 Based in Bangalore / Chennai, India
+- 🎓 PG in Multi-Cloud Architecture & DevOps (Hero Vired, 2026)
+- ☁️ Specialized in AWS, Azure, Kubernetes, and CI/CD
+- 🔐 Passionate about cloud security automation and infrastructure orchestration
 
-🛠️ Technical Arsenal
+---
 
-Cloud & DevOps
+# 🛠️ Technical Arsenal
 
-Platforms: AWS (EC2, S3, Lambda, IAM, VPC), Azure (AZ-104).
+## ☁️ Cloud & DevOps
 
-Orchestration: Kubernetes (K8s), Docker.
+### Platforms
+- AWS (EC2, S3, Lambda, IAM, VPC)
+- Microsoft Azure (AZ-104)
 
-CI/CD: GitHub Actions, Git, JIRA.
+### Containerization & Orchestration
+- Docker
+- Kubernetes (K8s)
 
-IaC & Automation: Python (Boto3), Shell Scripting.
+### CI/CD & Version Control
+- GitHub Actions
+- Git
+- JIRA
 
-Enterprise Administration
+### Infrastructure as Code & Automation
+- Python (Boto3)
+- Shell Scripting
 
-Systems: Windows Server 2026, Linux (CentOS/Ubuntu), WSL2.
+---
 
-Tools: Active Directory, MDT, Lansweeper, Snipe-IT, Exchange Admin Center.
+## 🖥️ Enterprise Administration
 
-Backup/DR: CommVault, Veritas, EMC Avamar.
+### Operating Systems
+- Windows Server 2026
+- Linux (CentOS / Ubuntu)
+- WSL2
 
-Networking & Security
+### Enterprise Tools
+- Active Directory
+- MDT
+- Lansweeper
+- Snipe-IT
+- Exchange Admin Center
 
-Infrastructure: Cisco Meraki, Aruba Switches, VPN, Firewalls.
+### Backup & Disaster Recovery
+- CommVault
+- Veritas
+- EMC Avamar
 
-Certifications: AZ-104, CCNA, MCITP, CompTIA A+.
+---
 
-📂 Featured Projects
+## 🌐 Networking & Security
 
-Project
+### Infrastructure
+- Cisco Meraki
+- Aruba Switches
+- VPN
+- Firewalls
 
-Description
+### Certifications
+- AZ-104
+- CCNA
+- MCITP
+- CompTIA A+
 
-Tech Stack
+---
 
-Gratitude App
+# 📂 Featured Projects
 
-Multi-Cloud CI/CD Pipeline.
+| Project | Description | Tech Stack |
+|----------|-------------|-------------|
+| Gratitude App | Multi-Cloud CI/CD Pipeline | AWS, Azure, Docker |
+| Asset QR Management | QR-based inventory automation system | Python, CI/CD |
+| Cloud Sec-Auditor | Automated S3 vulnerability detection | Boto3, AWS Lambda |
+| Sentiment Analysis | Serverless AI text processing | AWS Lambda, Python |
 
-AWS, Azure, Docker
+---
 
-Asset QR Management
+# 📈 GitHub Stats
 
-QR-based inventory automation system.
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=shankarprasadtn&show_icons=true&theme=tokyonight)
 
-Python, CI/CD
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shankarprasadtn&layout=compact&theme=tokyonight)
 
-Cloud Sec-Auditor
+---
 
-Automated S3 vulnerability detection.
+# ✉️ Connect With Me
 
-Boto3, AWS Lambda
+- 🌐 Website: [shankarprasadtn.xyz](https://www.shankarprasadtn.xyz?utm_source=chatgpt.com)
+- 💼 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/shankar-prasad-34853288/?utm_source=chatgpt.com)
+- 📧 Email: shankarprasadtn@gmail.com
 
-Sentiment Analysis
+---
 
-Serverless AI text processing.
+# 📌 Repository Purpose
 
-AWS Lambda, Python
+This repository serves as:
 
-📈 GitHub Stats
+- A professional portfolio showcase
+- A central hub for DevOps and Cloud projects
+- A GitHub Pages hosted infographic resume
+- A demonstration of modern CI/CD and cloud deployment workflows
 
-✉️ Connect with Me
+---
 
-Website: shankarprasadtn.xyz
+# 🧰 Technologies Used
 
-LinkedIn: linkedin.com/in/shankar-prasad-34853288
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
+- GitHub Actions
+- Cloud & DevOps Tooling
 
-Email: shankarprasadtn@gmail.com
+---
+
+# 🚀 Deployment
+
+This portfolio is deployed using:
+
+- GitHub Pages
+- Custom Domain Configuration
+- Automated GitHub Actions Workflow
+
+---
+
+# 📄 License
+
+This project is open-source and available for educational and professional portfolio purposes.
+
+---
+
+## ⭐ Support
+
+If you find this portfolio helpful or inspiring, feel free to star the repository.
