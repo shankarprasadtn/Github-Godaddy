@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankar Prasad TN - Professional Resume</title>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            color: #111827;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            background-color: #ffffff;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        @media print {
+            body { background-color: #ffffff; padding: 0; color: #000000; }
+            .page { width: 100%; min-height: 100%; box-shadow: none; padding: 0; margin: 0; border: none; }
+            .no-print { display: none !important; }
+        }
+
+        .print-banner {
+            width: 210mm;
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: justify;
+            align-items: center;
+            font-size: 13px;
+            line-height: 1.5;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .print-btn {
+            background-color: #14b8a6;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-left: auto;
+        }
+
+        .print-btn:hover { background-color: #0d9488; }
+
+        header { text-align: center; margin-bottom: 12px; }
+        h1 { font-size: 26px; font-weight: 800; margin: 0 0 4px 0; letter-spacing: -0.5px; text-transform: uppercase; }
+        .contact-info { font-size: 11px; color: #4b5563; margin-bottom: 2px; }
+        .contact-info a { color: #2563eb; text-decoration: none; }
+        .links-row { font-size: 11px; color: #4b5563; }
+        .links-row a { color: #2563eb; text-decoration: none; }
+
+        section { margin-bottom: 12px; }
+        h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; border-bottom: 1.5px solid #111827; padding-bottom: 2px; margin: 12px 0 6px 0; letter-spacing: 0.5px; }
+        .summary-text { font-size: 11px; line-height: 1.5; margin: 0; text-align: justify; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; font-size: 11px; line-height: 1.4; }
+        .skill-item strong { font-weight: 600; }
+
+        .exp-item { margin-bottom: 10px; }
+        .exp-header { display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 700; margin-bottom: 2px; }
+        .exp-subheader { display: flex; justify-content: space-between; font-size: 11px; font-style: italic; color: #4b5563; margin-bottom: 4px; }
+        ul { margin: 0; padding-left: 16px; }
+        li { font-size: 11px; line-height: 1.45; margin-bottom: 2px; text-align: justify; }
+        .key-achievement { font-weight: 600; }
+
+        .proj-item { margin-bottom: 8px; }
+        .proj-header { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+        .proj-desc { font-size: 11px; line-height: 1.4; margin: 0; color: #374151; }
+
+        .edu-item { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
+        .edu-item strong { font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="print-banner no-print">
+        <div>
+            <strong>🖨️ PDF Export Guide:</strong><br>
+            1. Click the <strong>Download PDF</strong> button on the right.<br>
+            2. In the print dialog, select <strong>"Save as PDF"</strong> as the Destination.<br>
+            3. In <em>More Settings</em>, set Margins to <strong>"None"</strong> and uncheck <strong>"Headers and footers"</strong>.
+        </div>
+        <button class="print-btn" onclick="window.print()">Download PDF</button>
+    </div>
+
+    <div class="page">
+        <header>
+            <h1>SHANKAR PRASAD TN</h1>
+            <div class="contact-info">
+                Bangalore, India &bull; +91-7411146096 &bull; <a href="mailto:shankarprasadtn@gmail.com">shankarprasadtn@gmail.com</a> &bull; <a href="https://shankarprasadtn.xyz" target="_blank">shankarprasadtn.xyz</a>
+            </div>
+            <div class="links-row">
+                <a href="https://linkedin.com/in/shankar-prasad-34853288" target="_blank">linkedin.com/in/shankar-prasad-34853288</a> &bull; <a href="https://github.com/shankarprasadtn" target="_blank">github.com/shankarprasadtn</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Dynamic IT Professional with 8+ years of experience in enterprise infrastructure and systems administration, currently transitioning into a Multi-Cloud DevOps role. Specialized in implementing scalable CI/CD pipelines, orchestrating containers with Kubernetes and Docker, and automating cloud security via Python (Boto3). Recently upskilled through a PG program in Multi-Cloud Architecture and Generative AI (2026), aiming to bridge veteran infrastructure reliability with modern DevOps agility.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda, IAM, VPC), Azure (AZ-104), Multi-Cloud Architecture</div>
+                <div class="skill-item"><strong>DevOps & Orchestration:</strong> Kubernetes (K8s), Docker, CI/CD Pipelines, Git/GitHub, JIRA</div>
+                <div class="skill-item"><strong>Operating Systems:</strong> CentOS, Ubuntu, Windows Server 2026, Windows 11/10, WSL2</div>
+                <div class="skill-item"><strong>Automation & AI:</strong> Python (Boto3), Shell Scripting, GenAI Integration, AWS Lambda, Microservices</div>
+                <div class="skill-item"><strong>Infrastructure & Admin:</strong> Active Directory, MDT, Lansweeper, Snipe-IT, EARS, Office 365, Exchange</div>
+                <div class="skill-item"><strong>Networking & Security:</strong> VPN, Cisco Meraki, Aruba Switches, Firewall Configuration, CCNA</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span>UPS Logistics Pvt Ltd - ITC</span>
+                    <span>Jul 2022 – Present</span>
+                </div>
+                <div class="exp-subheader">
+                    <span>Management Specialist</span>
+                    <span>Bangalore, Chennai</span>
+                </div>
+                <ul>
+                    <li>Orchestrate IT incident/change workflows using JIRA, improving service delivery efficiency by 20%.</li>
+                    <li>Administer Microsoft Azure subscription resources, managing Entra ID (Azure AD), hybrid directory synchronization, and RBAC policies.</li>
+                    <li>Deploy OS images using Cosmic Systems/MDT; distribute applications via GSDP and Group Policy.</li>
+                    <li>Manage IT assets and compliance using Lansweeper and EARS across Azure, O365, and Exchange Admin Center.</li>
+                    <li><span class="key-achievement">Key Achievement:</span> Successfully led IT infrastructure setup for the India Technology Center (ITC) in Chennai.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span>V2Soft Pvt Ltd (Client: STTAS-A UPS Company)</span>
+                    <span>Dec 2020 – Jul 2022</span>
+                </div>
+                <div class="exp-subheader">
+                    <span>IT System Administrator</span>
+                    <span>Bangalore, India</span>
+                </div>
+                <ul>
+                    <li>Configured WSL2 with Ubuntu and Docker for containerized development and testing environments.</li>
+                    <li>Operated IT asset management tools (Snipe-IT, Lansweeper) and managed Symantec Endpoint consoles.</li>
+                    <li>Executed patch management cycles using WSUS in coordination with information security policies.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span>Digicom Systems Ltd (Clients: AO Smith, Exotel Ltd)</span>
+                    <span>Apr 2019 – Nov 2020</span>
+                </div>
+                <div class="exp-subheader">
+                    <span>Systems Engineer</span>
+                    <span>Bangalore, India</span>
+                </div>
+                <ul>
+                    <li>Executed server migrations to cloud environments and provisioned VMs via Cisco HyperFlex.</li>
+                    <li>Administered backups and disaster recovery using CommVault, Veritas, and EMC Avamar.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span>Wipro Ltd</span>
+                    <span>Mar 2017 – Mar 2019</span>
+                </div>
+                <div class="exp-subheader">
+                    <span>Senior Associate Engineer</span>
+                    <span>Bangalore, India</span>
+                </div>
+                <ul>
+                    <li>Managed Active Directory (user provisioning, security groups) and resolved complex network issues.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project Portfolio</h2>
+            
+            <div class="proj-item">
+                <div class="proj-header">Gratitude App (Capstone) &bull; <em>Multi-Cloud CI/CD</em></div>
+                <p class="proj-desc">Implemented a multi-cloud architecture and CI/CD pipeline to deploy a collaborative application across AWS and Azure.</p>
+            </div>
+
+            <div class="proj-item">
+                <div class="proj-header">Asset QR Management (v1.2.3) &bull; <em>Inventory Automation</em></div>
+                <p class="proj-desc">Developed a QR-based tracking system to streamline inventory management and hardware lifecycle visibility.</p>
+            </div>
+
+            <div class="proj-item">
+                <div class="proj-header">Cloud Security Monitor &bull; <em>Automation</em></div>
+                <p class="proj-desc">Built an automated security auditing tool using Python and Boto3 to programmatically detect unencrypted S3 buckets, enhancing cloud infrastructure protection.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Certifications</h2>
+            
+            <div class="edu-item">
+                <span><strong>PG Program in Multi-Cloud Architecture & DevOps</strong> -- Hero Vired</span>
+                <span>2026</span>
+            </div>
+            <div class="edu-item">
+                <span><strong>BE in Computer Science</strong> -- CMRIT, Visveshwaraya Technological University</span>
+                <span>2016</span>
+            </div>
+            <div class="edu-item">
+                <span><strong>Diploma in CS</strong> -- Bharath Polytechnic</span>
+                <span>2009 -- 2012</span>
+            </div>
+            <div class="edu-item" style="margin-top: 6px;">
+                <span><strong>Certifications:</strong> AZ-104 (Microsoft Azure Administrator), CCNA, MCITP, CompTIA A+</span>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
