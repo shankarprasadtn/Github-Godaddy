@@ -17,7 +17,7 @@ I am a dynamic IT Professional with over **8 years of experience** in enterprise
 - 🏆 **[AWS Certified Solutions Architect – Associate](AWS%20Certified%20Solutions%20Architect%20-%20Associate%20certificate.pdf)**  
   *Validation ID:* `bdc9da83d2a0400dbad63426d9828494` &bull; *Validity:* Sep 1, 2026 – Sep 1, 2029 &bull; [Verify on AWS](https://aws.amazon.com/verification)
 - 🏆 **[Microsoft Certified: Azure Fundamentals (AZ-900)](Azure%20Fundamentals.pdf)**  
-  *Verification Code:* `nX4W-uTbU` &bull; *Score:* 942/1000 &bull; *Date:* August 23, 2026 &bull; [Score Report](AZ900%20Microsoft%20Azure%20Fundamentals.pdf)
+  *Verification Code:* `nX4W-uTbU` &bull; *Score:* 942/1000 &bull; *Date:* August 23, 2026 &bull; [Score Report](AZ900%20Microsoft%20Azure%20Fundamentals.pdf) &bull; [Verify on Certiport](https://verify.certiport.com)
 - 📌 **Additional Credentials:** Microsoft Azure Administrator (AZ-104), Cisco CCNA, MCITP, CompTIA A+
 
 ## 🛠️ Technical Arsenal

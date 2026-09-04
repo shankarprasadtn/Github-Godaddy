@@ -22,7 +22,7 @@
             background-color: #ffffff;
             width: 210mm;
             min-height: 297mm;
-            padding: 12mm 15mm;
+            padding: 10mm 15mm;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
             border-radius: 4px;
@@ -64,33 +64,33 @@
 
         .print-btn:hover { background-color: #0d9488; }
 
-        header { text-align: center; margin-bottom: 10px; }
-        h1 { font-size: 24px; font-weight: 800; margin: 0 0 4px 0; letter-spacing: -0.5px; text-transform: uppercase; }
+        header { text-align: center; margin-bottom: 8px; }
+        h1 { font-size: 24px; font-weight: 800; margin: 0 0 3px 0; letter-spacing: -0.5px; text-transform: uppercase; }
         .contact-info { font-size: 10.5px; color: #4b5563; margin-bottom: 2px; }
         .contact-info a { color: #0d9488; text-decoration: none; }
         .links-row { font-size: 10.5px; color: #4b5563; }
         .links-row a { color: #0d9488; text-decoration: none; }
 
-        section { margin-bottom: 10px; }
-        h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; border-bottom: 1.5px solid #111827; padding-bottom: 2px; margin: 10px 0 5px 0; letter-spacing: 0.5px; }
+        section { margin-bottom: 9px; }
+        h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; border-bottom: 1.5px solid #111827; padding-bottom: 2px; margin: 9px 0 4px 0; letter-spacing: 0.5px; }
         .summary-text { font-size: 10.5px; line-height: 1.45; margin: 0; text-align: justify; }
 
         .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 16px; font-size: 10.5px; line-height: 1.35; }
         .skill-item strong { font-weight: 600; }
 
-        .exp-item { margin-bottom: 8px; }
+        .exp-item { margin-bottom: 7px; }
         .exp-header { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; margin-bottom: 1px; }
-        .exp-subheader { display: flex; justify-content: space-between; font-size: 10.5px; font-style: italic; color: #4b5563; margin-bottom: 3px; }
+        .exp-subheader { display: flex; justify-content: space-between; font-size: 10.5px; font-style: italic; color: #4b5563; margin-bottom: 2px; }
         ul { margin: 0; padding-left: 16px; }
         li { font-size: 10.5px; line-height: 1.4; margin-bottom: 2px; text-align: justify; }
         .key-achievement { font-weight: 600; }
 
-        .proj-item { margin-bottom: 6px; }
+        .proj-item { margin-bottom: 5px; }
         .proj-header { font-size: 10.5px; font-weight: 700; margin-bottom: 1px; }
         .proj-desc { font-size: 10px; line-height: 1.35; margin: 0; color: #374151; }
 
-        .edu-item { display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 3px; }
-        .edu-item strong { font-weight: 600; }
+        .item-row { display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 3px; }
+        .item-row strong { font-weight: 600; }
     </style>
 </head>
 <body>
@@ -123,7 +123,7 @@
         <section>
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-item"><strong>Cloud Platforms:</strong> AWS (Solutions Architect Associate, EC2, S3, Lambda, IAM, VPC), Azure (AZ-900, AZ-104), Multi-Cloud</div>
+                <div class="skill-item"><strong>Cloud Platforms:</strong> AWS (Solutions Architect Associate, EC2, S3, Lambda, IAM, VPC), Azure (AZ-900 Certified, AZ-104), Multi-Cloud</div>
                 <div class="skill-item"><strong>DevOps & Orchestration:</strong> Kubernetes (K8s), Docker, CI/CD Pipelines, GitHub Actions, Git/GitHub, JIRA</div>
                 <div class="skill-item"><strong>Operating Systems:</strong> CentOS, Ubuntu, Windows Server 2026, Windows 11/10, WSL2</div>
                 <div class="skill-item"><strong>Automation & AI:</strong> Python (Boto3), Shell Scripting, Agentic AI, GenAI Integration, AWS Lambda, Microservices</div>
@@ -219,30 +219,36 @@
         </section>
 
         <section>
-            <h2>Certifications & Education</h2>
+            <h2>Certifications</h2>
             
-            <div class="edu-item">
-                <span><strong>AWS Certified Solutions Architect – Associate</strong> (Validation: bdc9da83d2a0400dbad63426d9828494)</span>
+            <div class="item-row">
+                <span><strong>AWS Certified Solutions Architect – Associate</strong> (ID: <code>bdc9da83d2a0400dbad63426d9828494</code>)</span>
                 <span>Sep 2026 – Sep 2029</span>
             </div>
-            <div class="edu-item">
-                <span><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> (Score: 942/1000 | Code: nX4W-uTbU)</span>
+            <div class="item-row">
+                <span><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> (Score: 942/1000, Code: <code>nX4W-uTbU</code>)</span>
                 <span>Aug 2026</span>
             </div>
-            <div class="edu-item">
+            <div class="item-row">
+                <span><strong>Additional Credentials:</strong> Microsoft AZ-104, Cisco CCNA, MCITP, CompTIA A+</span>
+                <span>Active</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            
+            <div class="item-row">
                 <span><strong>PG Program in Multi-Cloud Architecture & DevOps</strong> -- Hero Vired (AWS, GCP, Azure)</span>
                 <span>2026</span>
             </div>
-            <div class="edu-item">
+            <div class="item-row">
                 <span><strong>BE in Computer Science</strong> -- CMRIT, Visveshwaraya Technological University</span>
                 <span>2016</span>
             </div>
-            <div class="edu-item">
+            <div class="item-row">
                 <span><strong>Diploma in Computer Science</strong> -- Bharath Polytechnic</span>
                 <span>2009 – 2012</span>
-            </div>
-            <div class="edu-item" style="margin-top: 4px;">
-                <span><strong>Additional Credentials:</strong> Microsoft AZ-104, Cisco CCNA, MCITP, CompTIA A+</span>
             </div>
         </section>
 
